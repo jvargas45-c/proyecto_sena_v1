@@ -21,13 +21,18 @@ body{
 
 /* manchas del fondo */
 .mancha{
-    position: absolute;
-    background: radial-gradient(
-        circle, 
-        rgba(255,80,140,.55) 0%,
-        rgba(255,120,180,.35) 50%,
-        transparent 100%
+    position:absolute;
+
+    background:
+    repeating-radial-gradient(
+        circle,
+        rgba(255,80,140,.55) 0px,
+        rgba(255,80,140,.55) 4px,
+        rgba(255,120,180,.45) 8px,
+        rgba(255,120,180,.35) 12px
     );
+
+    filter:blur(35px);
 }
 
 /* SUPERIOR IZQUIERDA */

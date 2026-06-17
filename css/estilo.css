@@ -16,11 +16,11 @@ body::before{
     position: fixed;
     inset: 0;
     background: 
-        radial-gradient(circle at 15% 15%, rgba(255,105,180,.2) 0%, transparent 12%),
-        radial-gradient(circle at 80% 15%, rgba(255,105,180,.17) 0%, transparent 15%),
-        radial-gradient(circle at 15% 15%, rgba(255,105,180,.12) 0%, transparent 10%),
-        radial-gradient(circle at 15% 15%, rgba(255,105,180,.17) 0%, transparent 15%),
-        radial-gradient(circle at 15% 15%, rgba(255,105,180,.17) 0%, transparent 15%);
+        radial-gradient(circle at 15% 15%, rgba(255,105,180,4.4) 0%, transparent 12%),
+        radial-gradient(circle at 80% 15%, rgba(255,105,180,2.17) 0%, transparent 15%),
+        radial-gradient(circle at 15% 15%, rgba(255,105,180,2.12) 0%, transparent 10%),
+        radial-gradient(circle at 15% 15%, rgba(255,105,180,2.17) 0%, transparent 15%),
+        radial-gradient(circle at 15% 15%, rgba(255,105,180,2.17) 0%, transparent 15%);
     
     filter: blur(25px);
     z-index: -1;

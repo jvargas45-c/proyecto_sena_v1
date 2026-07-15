@@ -29,8 +29,8 @@
                 <i class="fa-solid fa-bars" id="menuBtn"></i>
 
                 <div id="dropdownMenu" class="dropdown-menu hidden">
-                    <a href="registrar.html">Registrarse</a>
-                    <a href="iniciar.html">Iniciar Sesión</a>
+                    <a href="registrar.php">Registrarse</a>
+                    <a href="iniciar.php">Iniciar Sesión</a>
                 </div>
             </div>
         </div>

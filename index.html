@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulce Tentación V1</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -23,7 +25,14 @@
         <div class="iconos">
             <i class="fa-solid fa-heart"></i>
             <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-bars"></i>
+            <div class="menu-container">
+                <i class="fa-solid fa-bars" id="menuBtn"></i>
+
+                <div id="dropdownMenu" class="dropdown-menu hidden">
+                    <a href="registrar.html">Registrarse</a>
+                    <a href="iniciar.html">Iniciar Sesión</a>
+                </div>
+            </div>
         </div>
     </header>
 

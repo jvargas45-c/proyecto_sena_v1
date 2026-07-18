@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dulce Tentación · Mis Favoritos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --pink: #E6127D;
+    --pink-dark: #C40E68;
+    --pink-soft: #FDEFF4;
+    --cream: #F6DDBA;
+    --ink: #241B24;
+    --muted: #8C7F8A;
+    --white: #FFFFFF;
+    --border: #F3D9E4;
+    --radius-lg: 22px;
+    --radius-md: 14px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 0% 0%, #FBD7E6 0%, transparent 45%),
+      radial-gradient(circle at 100% 15%, #FBD7E6 0%, transparent 40%),
+      linear-gradient(180deg, #FFF6FA 0%, #FFFFFF 55%);
+    min-height:100vh;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--white);
+    box-shadow:0 2px 10px rgba(230,18,125,0.08);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .header-inner{
+    max-width:1240px;
+    margin:0 auto;
+    padding:16px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.6rem;
+    color:var(--pink);
+  }
+  .header-icons{
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+  .icon-btn{
+    position:relative;
+    background:none;
+    border:none;
+    font-size:1.25rem;
+    color:var(--ink);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    transition:background .2s ease, color .2s ease, transform .15s ease;
+  }
+  .icon-btn:hover{ background:var(--pink-soft); color:var(--pink); }
+  .icon-btn.active{ color:var(--pink); }
+  .icon-btn .badge{
+    position:absolute;
+    top:-2px; right:-2px;
+    background:var(--pink);
+    color:#fff;
+    font-size:.65rem;
+    font-weight:700;
+    min-width:17px;
+    height:17px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 3px;
+  }
+
+  /* ---------- Page heading ---------- */
+  .page-head{
+    max-width:1240px;
+    margin:0 auto;
+    padding:52px 32px 8px;
+    text-align:center;
+  }
+  .page-head .eyebrow{
+    font-size:.8rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--pink);
+    font-weight:600;
+  }
+  .page-head h1{
+    font-family:'Baloo 2', sans-serif;
+    font-size:2.4rem;
+    margin-top:6px;
+    color:var(--ink);
+  }
+  .page-head h1 i{ color:var(--pink); margin-left:6px; }
+  .page-head p{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:1rem;
+  }
+
+  /* ---------- Grid ---------- */
+  .fav-grid{
+    max-width:1240px;
+    margin:0 auto;
+    padding:36px 32px 100px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:26px;
+  }
+  @media (max-width:1080px){ .fav-grid{ grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:800px){ .fav-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .fav-grid{ grid-template-columns:1fr; padding:24px 18px 80px;} .page-head{ padding:36px 18px 4px;} }
+
+  .card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:0 6px 22px rgba(230,18,125,0.08);
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+    animation:pop .35s ease;
+  }
+  .card:hover{ transform:translateY(-5px); box-shadow:0 14px 30px rgba(230,18,125,0.16); }
+  @keyframes pop{ from{opacity:0; transform:scale(.94);} to{opacity:1; transform:scale(1);} }
+  @keyframes fadeOut{ to{ opacity:0; transform:scale(.9); } }
+
+  .card-img{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+  }
+  .card-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .35s ease;
+  }
+  .card:hover .card-img img{ transform:scale(1.06); }
+
+  .fav-toggle{
+    position:absolute;
+    top:12px; right:12px;
+    width:36px; height:36px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.92);
+    border:none;
+    color:var(--pink);
+    font-size:1.05rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 3px 8px rgba(0,0,0,0.15);
+    transition:transform .15s ease;
+  }
+  .fav-toggle:hover{ transform:scale(1.1); }
+
+  .tag{
+    position:absolute;
+    top:12px; left:12px;
+    background:var(--cream);
+    color:#7A4E17;
+    font-size:.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    padding:5px 10px;
+    border-radius:20px;
+  }
+
+  .card-body{
+    padding:16px 18px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    flex:1;
+  }
+  .card-body h3{
+    font-family:'Baloo 2', sans-serif;
+    font-size:1.08rem;
+    color:var(--ink);
+  }
+  .card-body .desc{
+    font-size:.82rem;
+    color:var(--muted);
+    line-height:1.4;
+    flex:1;
+  }
+  .price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:8px;
+  }
+  .price{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--pink-dark);
+  }
+  .add-btn{
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:.85rem;
+    padding:9px 16px;
+    border-radius:24px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .add-btn:hover{ background:var(--pink-dark); transform:translateY(-1px); }
+
+  /* ---------- Empty state ---------- */
+  .empty-state{
+    max-width:1240px;
+    margin:0 auto;
+    padding:70px 32px 130px;
+    text-align:center;
+    display:none;
+  }
+  .empty-state .heart-wrap{
+    width:96px; height:96px;
+    margin:0 auto 22px;
+    border-radius:50%;
+    background:var(--pink-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2.4rem;
+    color:var(--pink);
+  }
+  .empty-state h2{
+    font-family:'Baloo 2', sans-serif;
+    font-size:1.6rem;
+    margin-bottom:8px;
+  }
+  .empty-state p{
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .explore-btn{
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    font-weight:600;
+    padding:13px 30px;
+    border-radius:26px;
+    font-size:.95rem;
+    cursor:pointer;
+    transition:background .2s ease;
+  }
+  .explore-btn:hover{ background:var(--pink-dark); }
+
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:.88rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:50;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto; }
+  .toast i{ color:var(--pink); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Dulce Tentación</div>
+    <div class="header-icons">
+      <button class="icon-btn active" title="Favoritos">
+        <i class="fa-solid fa-heart"></i>
+        <span class="badge" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" title="Carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge" id="cartCount" style="display:none;">0</span>
+      </button>
+      <button class="icon-btn" title="Menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="eyebrow">Tu selección</div>
+  <h1>Mis Favoritos <i class="fa-solid fa-heart"></i></h1>
+  <p>Los postres que más se te antojan, guardados en un solo lugar.</p>
+</section>
+
+<section class="fav-grid" id="favGrid"></section>
+
+<section class="empty-state" id="emptyState">
+  <div class="heart-wrap"><i class="fa-regular fa-heart"></i></div>
+  <h2>Aún no tienes favoritos</h2>
+  <p>Toca el corazón en cualquier postre para guardarlo aquí.</p>
+  <button class="explore-btn">Explorar postres</button>
+</section>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastText"></span></div>
+
+<script>
+let items = [
+  {
+    id: 1,
+    name: "Torta de Chocolate",
+    desc: "Capas húmedas de chocolate con ganache y fresa fresca.",
+    tag: "Tortas",
+    price: 68000,
+    img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 2,
+    name: "Torta Nupcial Rosé",
+    desc: "Tres pisos rústicos decorados con rosas y frutos secos.",
+    tag: "Especiales",
+    price: 245000,
+    img: "https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 3,
+    name: "Cupcakes de Fresa",
+    desc: "Bizcocho de vainilla con crema batida de fresa natural.",
+    tag: "Cupcakes",
+    price: 8500,
+    img: "https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 4,
+    name: "Galletas Choco Chip",
+    desc: "Crocantes por fuera, suaves por dentro, cargadas de chocolate.",
+    tag: "Galletas",
+    price: 6000,
+    img: "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 5,
+    name: "Macarons Surtidos",
+    desc: "Caja x6 con sabores de vainilla, pistacho y frambuesa.",
+    tag: "Macarons",
+    price: 32000,
+    img: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    id: 6,
+    name: "Brownie con Nuez",
+    desc: "Denso, chocolatoso y con trozos de nuez tostada.",
+    tag: "Brownies",
+    price: 9500,
+    img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80"
+  }
+];
+
+const grid = document.getElementById('favGrid');
+const emptyState = document.getElementById('emptyState');
+const favCount = document.getElementById('favCount');
+const cartCount = document.getElementById('cartCount');
+const toast = document.getElementById('toast');
+const toastText = document.getElementById('toastText');
+let cartTotal = 0;
+let toastTimer;
+
+function formatCOP(n){
+  return '$' + n.toLocaleString('es-CO') + ' COP';
+}
+
+function showToast(msg){
+  toastText.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function render(){
+  grid.innerHTML = '';
+  favCount.textContent = items.length;
+
+  if(items.length === 0){
+    grid.style.display = 'none';
+    emptyState.style.display = 'block';
+    return;
+  }
+  grid.style.display = 'grid';
+  emptyState.style.display = 'none';
+
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = 'card-' + item.id;
+    card.innerHTML = `
+      <div class="card-img">
+        <img src="${item.img}" alt="${item.name}">
+        <span class="tag">${item.tag}</span>
+        <button class="fav-toggle" title="Quitar de favoritos" onclick="removeItem(${item.id})">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+      <div class="card-body">
+        <h3>${item.name}</h3>
+        <p class="desc">${item.desc}</p>
+        <div class="price-row">
+          <span class="price">${formatCOP(item.price)}</span>
+          <button class="add-btn" onclick="addToCart('${item.name.replace(/'/g,"")}')">
+            <i class="fa-solid fa-cart-plus"></i> Agregar
+          </button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function removeItem(id){
+  const card = document.getElementById('card-' + id);
+  const removed = items.find(i => i.id === id);
+  card.style.animation = 'fadeOut .25s ease forwards';
+  setTimeout(() => {
+    items = items.filter(i => i.id !== id);
+    render();
+    showToast(`${removed.name} se quitó de favoritos`);
+  }, 200);
+}
+
+function addToCart(name){
+  cartTotal++;
+  cartCount.style.display = 'flex';
+  cartCount.textContent = cartTotal;
+  showToast(`${name} agregado al carrito`);
+}
+
+render();
+</script>
+
+</body>
+</html>

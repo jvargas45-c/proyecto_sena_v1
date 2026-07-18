@@ -49,3 +49,16 @@ document.addEventListener('click', (e) => {
     dropdownMenu.classList.add('hidden');
   }
 });
+
+const favoritos = document.getElementById('favoritos');
+const paginaF = document.getElementById('paginaF');
+
+favoritos.addEventListener('click', () => {
+  paginaF.classList.toggle('hidden');
+});
+
+document.addEventListener('click', (e) => {
+  if (!favoritos.contains(e.target) && !paginaF.contains(e.target)) {
+    paginaF.classList.add('hidden');
+  }
+});

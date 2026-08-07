@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dulce Tentación V1</title>
+    <title>Dulce Tentación</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
@@ -53,33 +53,35 @@
 
     
     <section class="categorias">
-        <div class="categoria">
+
+        <a href="productos.php?categoria=pasteleria" class="categoria">
             <img src="img/tortas.jpg">
             <div class="overlay">
                 <h3>Pastelería</h3>
             </div>
-        </div>
+        </a>
 
-        <div class="categoria">
+        <a href="productos.php?categoria=personalizados" class="categoria">
             <img src="img/personalizados.jpg">
             <div class="overlay">
                 <h3>Personalizados</h3>
             </div>
-        </div>
+        </a>
 
-        <div class="categoria">
+        <a href="productos.php?categoria=minis" class="categoria">
             <img src="img/minis.jpg">
             <div class="overlay">
                 <h3>Minis</h3>
             </div>
-        </div>
+        </a>
 
-        <div class="categoria">
+        <a href="productos.php?categoria=antojitos" class="categoria">
             <img src="img/antojitos.jpg">
             <div class="overlay">
                 <h3>Antojitos</h3>
             </div>
-        </div>
+        </a>
+
     </section>
 
     

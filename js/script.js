@@ -1,6 +1,6 @@
 const imagenes = [
-    "img/prueba_promo1.JPG",
-    "img/prueba_promo2.JPG"
+    "img/promocion1.jpg",
+    "img/promocion2.jpg"
 ];
 
 let actual = 0;

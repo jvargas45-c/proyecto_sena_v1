@@ -42,7 +42,7 @@
     
     <section class="slider">
         <button id="prev">&#10094;</button>
-        <img id="slide" src="img/prueba_promo1.JPG">
+        <img id="slide" src="img/promocion1.jpg">
         <button id="next">&#10095;</button>
 
         <div class="texto-slider">
@@ -55,28 +55,28 @@
     <section class="categorias">
 
         <a href="productos.php?categoria=pasteleria" class="categoria">
-            <img src="img/tortas.jpg">
+            <img src="img/Tortas de Tres Leches.jpg">
             <div class="overlay">
                 <h3>Pastelería</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=personalizados" class="categoria">
-            <img src="img/personalizados.jpg">
+            <img src="img/Torta personalizada.jpg">
             <div class="overlay">
                 <h3>Personalizados</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=minis" class="categoria">
-            <img src="img/minis.jpg">
+            <img src="img/Cupcakes.jpg">
             <div class="overlay">
                 <h3>Minis</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=antojitos" class="categoria">
-            <img src="img/antojitos.jpg">
+            <img src="img/Galletas.jpg">
             <div class="overlay">
                 <h3>Antojitos</h3>
             </div>
@@ -90,13 +90,13 @@
 
         <div class="articulos">
             <article>
-                <img src="img/tortas.jpg">
+                <img src="img/Historia.jpg" alt="HISTORIA DE PASTELERÍA">
                 <h3>Historia de la repostería</h3>
                 <p>Aprende cómo nació la repostería moderna</p>
             </article>
 
             <article>
-                <img src="img/minis.jpg">
+                <img src="img/Frutas.jpg" alt="FRUTAS EXÓTICAS">
                 <h3>4 frutas exóticas de Colombia</h3>
                 <p>Conoce frutas para usar en tus postres</p>
             </article>

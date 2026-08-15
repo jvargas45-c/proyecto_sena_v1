@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapfamily=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.clois.com/css2?udflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="manchas-fondo">
@@ -24,7 +24,7 @@
         <h1>Dulce Tentación</h1>
         <div class="iconos">
             <a href="favoritos/favorito.html">
-                <i class="fa-solid fa-heart" id="favBtn"></i>
+                <i class="fa-solid fa-heart"></i>
             </a>
             
             <i class="fa-solid fa-cart-shopping"></i>

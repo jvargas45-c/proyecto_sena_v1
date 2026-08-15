@@ -148,15 +148,25 @@ header h1{
     gap: 25px;
 }
 
-.iconos i{
-    font-size: 24px;
-    cursor: pointer;
-    transition: .3s;
+.iconos i, .iconos a i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.iconos i:hover, .iconos a i:hover {
+  color: #d63384;
+  transform: scale(1.2);
 }
 
 .iconos i:hover{
     color: #d63384;
     transform: scale(1.2);
+}
+
+.iconos a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .menu-container {

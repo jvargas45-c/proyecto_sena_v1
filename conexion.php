@@ -3,12 +3,13 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "dulce_tentacion";
+$db = "dulce_tentación"; 
 
-$conn = mysqli_connect($host,$user,$password,$db);
+$conexion = mysqli_connect($host, $user, $password, $db);
 
-if(!$conn){
-    die("Error de conexión");
+if (!$conexion) {
+    die("Error de conexión: " . mysqli_connect_error());
 }
 
+mysqli_set_charset($conexion, "utf8");
 ?>

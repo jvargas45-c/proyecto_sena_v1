@@ -62,7 +62,7 @@
         </a>
 
         <a href="productos.php?categoria=personalizados" class="categoria">
-            <img src="img/Torta personalizada.jpg">
+            <img src="img/Torta personalizado.jpg">
             <div class="overlay">
                 <h3>Personalizados</h3>
             </div>
@@ -89,11 +89,13 @@
         <h2>Conoce todo sobre Pastelería</h2>
 
         <div class="articulos">
+        <a href="otras_paginas/historia.html">
             <article>
                 <img src="img/Historia.jpg" alt="HISTORIA DE PASTELERÍA">
                 <h3>Historia de la repostería</h3>
                 <p>Aprende cómo nació la repostería moderna</p>
             </article>
+        </a>
 
             <article>
                 <img src="img/Frutas.jpg" alt="FRUTAS EXÓTICAS">

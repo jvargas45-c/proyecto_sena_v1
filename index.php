@@ -42,7 +42,7 @@
     
     <section class="slider">
         <button id="prev">&#10094;</button>
-        <img id="slide" src="img/promocion1.jpg">
+        <img id="slide" src="img/Promocion de bodas.png">
         <button id="next">&#10095;</button>
 
         <div class="texto-slider">
@@ -55,28 +55,28 @@
     <section class="categorias">
 
         <a href="productos.php?categoria=pasteleria" class="categoria">
-            <img src="img/Tortas de Tres Leches.jpg">
+            <img src="img/Tortas de Tres Leches.png">
             <div class="overlay">
                 <h3>Pastelería</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=personalizados" class="categoria">
-            <img src="img/Torta personalizado.jpg">
+            <img src="img/Torta personalizado.png">
             <div class="overlay">
                 <h3>Personalizados</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=minis" class="categoria">
-            <img src="img/Cupcakes.jpg">
+            <img src="img/Cupcakes.png">
             <div class="overlay">
                 <h3>Minis</h3>
             </div>
         </a>
 
         <a href="productos.php?categoria=antojitos" class="categoria">
-            <img src="img/Galletas.jpg">
+            <img src="img/Galletas.png">
             <div class="overlay">
                 <h3>Antojitos</h3>
             </div>
@@ -91,14 +91,14 @@
         <div class="articulos">
         <a href="otras_paginas/historia.html">
             <article>
-                <img src="img/Historia.jpg" alt="HISTORIA DE PASTELERÍA">
+                <img src="img/Historia.png" alt="HISTORIA DE PASTELERÍA">
                 <h3>Historia de la repostería</h3>
                 <p>Aprende cómo nació la repostería moderna</p>
             </article>
         </a>
 
             <article>
-                <img src="img/Frutas.jpg" alt="FRUTAS EXÓTICAS">
+                <img src="img/Frutas.png" alt="FRUTAS EXÓTICAS">
                 <h3>4 frutas exóticas de Colombia</h3>
                 <p>Conoce frutas para usar en tus postres</p>
             </article>

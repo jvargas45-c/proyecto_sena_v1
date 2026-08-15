@@ -14,7 +14,7 @@ $sql="INSERT INTO usuarios
 VALUES
 ('$nombre','$correo','$usuario','$contrasena','cliente')";
 
-mysqli_query($conn,$sql);
+mysqli_query($conexion,$sql);
 
 echo "Usuario registrado";
 

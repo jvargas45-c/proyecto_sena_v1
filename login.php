@@ -10,7 +10,7 @@ $sql="SELECT * FROM usuarios
 WHERE usuario='$usuario'
 AND contrasena='$contrasena'";
 
-$resultado=mysqli_query($conn,$sql);
+$resultado=mysqli_query($conexion,$sql);
 
 if(mysqli_num_rows($resultado)>0){
 

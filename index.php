@@ -6,8 +6,8 @@
     <title>Dulce Tentación</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapfamily=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.clois.com/css2?udflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="manchas-fondo">
@@ -44,11 +44,6 @@
         <button id="prev">&#10094;</button>
         <img id="slide" src="img/Promocion de bodas.png">
         <button id="next">&#10095;</button>
-
-        <div class="texto-slider">
-            <h2>25% DESCUENTO</h2>
-            <p>Fechas especiales y promociones y esas cosas</p>
-        </div>
     </section>
 
     

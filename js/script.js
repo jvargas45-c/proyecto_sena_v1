@@ -6,31 +6,33 @@ const imagenes = [
 let actual = 0;
 
 const slide = document.getElementById("slide");
-document.getElementById("next").addEventListener("click", ()=>{
-    
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
+
+next.addEventListener("click", function () {
     actual++;
 
-    if(actual >= imagenes.length){
+    if (actual >= imagenes.length) {
         actual = 0;
     }
 
     slide.src = imagenes[actual];
 });
 
-document.getElementById("prev").addEventListener("click", ()=>{
+prev.addEventListener("click", function () {
     actual--;
 
-    if(actual < 0){
-        actual = imagenes.length -1;
+    if (actual < 0) {
+        actual = imagenes.length - 1;
     }
 
     slide.src = imagenes[actual];
 });
 
-setInterval(()=>{
+setInterval(function () {
     actual++;
 
-    if(actual >= imagenes.length){
+    if (actual >= imagenes.length) {
         actual = 0;
     }
 
@@ -47,18 +49,5 @@ menuBtn.addEventListener('click', () => {
 document.addEventListener('click', (e) => {
   if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
     dropdownMenu.classList.add('hidden');
-  }
-});
-
-const favoritos = document.getElementById('favoritos');
-const paginaF = document.getElementById('paginaF');
-
-favoritos.addEventListener('click', () => {
-  paginaF.classList.toggle('hidden');
-});
-
-document.addEventListener('click', (e) => {
-  if (!favoritos.contains(e.target) && !paginaF.contains(e.target)) {
-    paginaF.classList.add('hidden');
   }
 });

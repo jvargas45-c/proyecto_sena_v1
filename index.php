@@ -92,11 +92,13 @@
             </article>
         </a>
 
+        <a href="otras_paginas/4frutas.html">    
             <article>
                 <img src="img/Frutas.png" alt="FRUTAS EXÓTICAS">
                 <h3>4 frutas exóticas de Colombia</h3>
                 <p>Conoce frutas para usar en tus postres</p>
             </article>
+        </a>
         </div>
     </section>
 

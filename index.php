@@ -34,6 +34,7 @@
                 <div id="dropdownMenu" class="dropdown-menu hidden">
                     <a href="sesion/registrar.html">Registrarse</a>
                     <a href="sesion/iniciar.html">Iniciar Sesión</a>
+                    <a href="pag_menu/postres.html">Preparar</a>
                 </div>
             </div>
         </div>

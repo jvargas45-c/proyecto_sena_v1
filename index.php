@@ -103,7 +103,60 @@
         </div>
     </section>
 
+
+
+<button id="botonIA" class="boton-ia">
+    🍰
+</button>
+
+<div id="ventanaIA" class="ventana-ia oculto">
+
+    <div class="encabezado-ia">
+
+        <div>
+            <strong>🍰 DulceIA</strong>
+            <small>Asistente de Dulce Tentación</small>
+        </div>
+
+        <button id="cerrarIA">✕</button>
+
+    </div>
+
+    <div id="mensajesIA" class="mensajes-ia">
+
+        <div class="mensaje ia">
+            ¡Hola! 👋<br><br>
+
+            Soy <strong>DulceIA</strong>, el asistente virtual
+            de Dulce Tentación.
+
+            <br><br>
+
+            Puedo ayudarte con nuestros productos,
+            categorías, compras y más. 🍰
+        </div>
+
+    </div>
+
+    <div class="entrada-ia">
+
+        <input
+            type="text"
+            id="entradaIA"
+            placeholder="Escribe tu pregunta..."
+        >
+
+        <button id="enviarIA">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
+
     <script src="js/script.js"></script>
+    <script src="js/asistente.js"></script>
     
 </body>
 </html>
